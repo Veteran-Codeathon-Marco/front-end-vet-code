@@ -8,10 +8,10 @@ function loadBussInfo(teams){
     $(".card-insert").html("");
     // let html = "";
     // html += "<div class='d-flex row w-100 justify-content-around mb-3'>";
-    $(".card-insert").append(html);
+    // $(".card-insert").append(html);
     for (let team of teams) {
         let html = "";
-        html += "<div class='d-flex col-4 flex-wrap card text-center' style='width: 18rem;'>";
+        html += "<div class='d-flex col-3 flex-wrap card text-center mx-1' style='width: 18rem;'>";
         html += "<img src='" + team.team_image_url +"' class='card-img-top mx-auto' alt='...'>";
         html += "<div class='card-body'>";
         html += "<h5 class='card-title'>" + team.team_name + "</h5>";
