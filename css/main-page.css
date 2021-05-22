@@ -1,0 +1,30 @@
+* {
+    box-sizing: border-box;
+}
+
+#bg-img {
+    background-image: url("../img/pexels-snapwire-6895.jpg");
+    position: absolute;
+    background-size: cover;
+    background-position: top;
+    height: 100vh;
+    width: 100vw;
+}
+
+
+#searchBar {
+    position: relative;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 80vw;
+    border: 20px solid rgba(0, 0, 0, 0.3);
+}
+
+#button-addon2 {
+    border-radius: 0;
+}
+
+#searchInput {
+    border-radius: 0;
+}
