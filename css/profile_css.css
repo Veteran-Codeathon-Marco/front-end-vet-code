@@ -29,3 +29,12 @@ a {
     margin-right: auto;
     width: 50%;
 }
+.nav-logo{
+    width: 100px;
+}
+.footer-logo{
+    width: 50px;
+}
+a {
+    text-decoration: none;
+}
