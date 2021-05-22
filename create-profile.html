@@ -39,8 +39,8 @@
             <div class="form-group">
                 <label class="font-weight-bold" for="businessName">Business name</label>
                 <input type="text" class="form-control" id="businessName">
-                <span class="font-weight-bold">Business address</span>
-                <div class="input-group">
+                <label for="business-address" class="font-weight-bold">Business address</label>
+                <div class="input-group" id="business-address">
                     <label for="Address-1">Address 1</label>
                     <input type="text" class="form-control" id="Address-1">
                     <label for="Address-2">Address 2</label>
@@ -50,27 +50,28 @@
                     <label for="state">State</label>
                     <input type="text" class="form-control" id="state">
                 </div>
+                <label for="category" class="font-weight-bold">Category</label>
+                <div id="category" class="input-group-append">
+                    <select class="custom-select form-control rounded-left border-right-0" id="movie-search-select-md">
+                        <option selected>Please select a category</option>
+                        <option value="retailer">Retailer</option>
+                        <option value="health practitioner">Health Practitioner</option>
+                        <option value="food service">Food Service</option>
+                        <option value="supplier/raw ingredient distributor">Supplier/Raw Ingredient Distributor</option>
+                        <option value="manufacturer">Manufacturer</option>
+                        <option value="business services">Business Services</option>
+                        <option value="hotel">Hotel</option>
+                        <option value="investor">Investor</option>
+                        <option value="other">Other</option>
 
-                <label class="font-weight-bold" for="email">Email address</label>
-                <input type="email" class="form-control" id="email" aria-describedby="emailHelp">
-                <small id="emailHelp" class="form-text text-muted">We'll send you a link to activate your account.</small>
+                    </select>
+                </div>
             </div>
-            <div class="form-group">
-                <label class="font-weight-bold" for="password">Password</label>
-                <input type="password" class="form-control" id="password">
-            </div>
-            <div class="form-group">
-                <label class="font-weight-bold" for="password-repeat">Confirm your password</label>
-                <input type="password" class="form-control" id="password-repeat">
-            </div>
-            <div class="form-group form-check">
-                <input type="checkbox" class="form-check-input" id="agreeTerms">
-                <label class="form-check-label" for="agreeTerms">I agree to the <a href="#">Terms and Conditions</a></label>
-            </div>
-            <small class="form-text text-muted">VetConnect collects and uses personal data in accordance with our <a href="privacy.html">Privacy Policy</a>.</small>
+
             <hr>
             <div class="d-flex justify-content-end">
-                <a href="create-profile.html" class="btn btn-primary">Next</a>
+                <a href="create-account-login.html" class="btn btn-primary">Back</a>
+                <a href="main-page-two.html" class="btn btn-primary">Finish</a>
             </div>
 
         </form>
