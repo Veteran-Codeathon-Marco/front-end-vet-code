@@ -74,7 +74,7 @@ body {
 
 
 
-/* ------------------------- login in form css -------------------------- */
-footer {
-    z-index: 1000;
+/* ------------------------- create profile form css -------------------------- */
+textarea {
+    min-width: 20rem;
 }
