@@ -14,38 +14,49 @@
 
 </nav>
 
-<div class="fieldset">
-    <header class="fieldset-header -divider-bottom">
+<div class="fieldset border rounded p-4">
+    <header class="fieldset-header d-flex">
         <div class="fieldset-title">
             <h3 class="t-heading -size-s">Create Account</h3>
         </div>
-        <div class="fieldset-action">
+        <div class="fieldset-action ml-auto">
             <span class="t-body">Already have an account?</span>
 <!--            need to add in href-->
-            <button type="button" class="btn -color-light -size-xs" data-toggle="modal" data-target="#signInModal">Sign in</button>
+            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#signInModal">Sign in</button>
         </div>
     </header>
 
+    <hr>
+
     <form id="sign-up-form">
+        <p>Sign up to VetConnect to get started.</p>
         <div class="form-group">
-            <label for="firstName">First name</label>
+            <label class="font-weight-bold" for="firstName">First name</label>
             <input type="text" class="form-control" id="firstName">
-            <label for="lastName">Last name</label>
+            <label class="font-weight-bold" for="lastName">Last name</label>
             <input type="text" class="form-control" id="lastName">
-            <label for="email">Email address</label>
+            <label class="font-weight-bold" for="email">Email address</label>
             <input type="email" class="form-control" id="email" aria-describedby="emailHelp">
             <small id="emailHelp" class="form-text text-muted">We'll send you a link to activate your account.</small>
         </div>
         <div class="form-group">
-            <label for="password">Password</label>
+            <label class="font-weight-bold" for="password">Password</label>
             <input type="password" class="form-control" id="password">
+        </div>
+        <div class="form-group">
+            <label class="font-weight-bold" for="password-repeat">Confirm your password</label>
+            <input type="password" class="form-control" id="password-repeat">
         </div>
         <div class="form-group form-check">
             <input type="checkbox" class="form-check-input" id="agreeTerms">
-            <label class="form-check-label" for="agreeTerms">I agree to the <a href="/">Terms and Conditions</a></label>
+            <label class="form-check-label" for="agreeTerms">I agree to the <a href="#">Terms and Conditions</a></label>
         </div>
-        <small class="form-text text-muted">VetSupport collects and uses personal data in accordance with our <a href="privacy.html">Privacy Policy</a>.</small>
-        <button type="submit" class="btn btn-primary">Next</button>
+        <small class="form-text text-muted">VetConnect collects and uses personal data in accordance with our <a href="privacy.html">Privacy Policy</a>.</small>
+        <hr>
+        <div class="d-flex justify-content-end">
+            <button type="submit" class="btn btn-primary">Next</button>
+        </div>
+
     </form>
 </div>
 
@@ -56,37 +67,40 @@
         <div class="modal-dialog modal-dialog-centered">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title">VetSupport</h5>
+                    <h5 class="modal-title">VetConnect</h5>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true" id="close">×</span>
                     </button>
                 </div>
-                <div class="modal-body d-flex flex-column">
+                <div class="modal-body d-flex flex-column mb-4">
                     <div class="sign_in_form_group">
-                        <div class="sign_in_form_label">
-                            <label for="username">Username</label>
+                        <div class="d-flex justify-content-between">
+                            <div class="sign_in_form_label">
+                                <label class="font-weight-bold" for="username">Username</label>
+                            </div>
+                            <div class="sign_in_form_hint">
+                                <a href="remind-me.html">Remind me</a>
+                            </div>
                         </div>
                         <div class="sign_in_form_input">
                             <input type="email" class="form-control" id="username" aria-describedby="usernameHelp" placeholder="example@vetsupport.com">
                         </div>
-                        <div class="sign_in_form_hint">
-                            <a href="remind-me.html">Remind me</a>
-                        </div>
                     </div>
                     <div class="sign_in_form_group">
-                        <div class="sign_in_form_label">
-                            <label for="sign_in_form_password">Password</label>
+                        <div class="d-flex justify-content-between">
+                            <div class="sign_in_form_label">
+                                <label class="font-weight-bold" for="sign_in_form_password">Password</label>
+                            </div>
+                            <div class="sign_in_form_hint">
+                                <a href="reset.html">Reset</a>
+                            </div>
                         </div>
                         <div class="sign_in_form_input">
-                            <input type="password" class="form-control" id="sign_in_form_password">
-                        </div>
-                        <div class="sign_in_form_hint">
-                            <a href="remind-me.html">Reset</a>
-                        </div>
+                        <input type="password" class="form-control" id="sign_in_form_password">
                     </div>
+                    </div>
+                    <button type="submit" class="btn border rounded font-weight-bold mt-3" id="sign-in-btn">Sign in to your account</button>
                 </div>
-                <button type="submit" class="btn" id="sign-in-btn">Sign in to your account</button>
-
             </div>
         </div>
     </form>
