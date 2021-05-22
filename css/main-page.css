@@ -2,6 +2,11 @@
     box-sizing: border-box;
 }
 
+body {
+    height: 100vh;
+}
+
+/* ------------------------- main page css -------------------------- */
 #bg-img {
     background-image: url("../img/pexels-snapwire-6895.jpg");
     position: absolute;
@@ -27,4 +32,20 @@
 
 #searchInput {
     border-radius: 0;
+}
+
+
+/* ------------------------- create account css -------------------------- */
+.bg-body {
+    background-color: rgba(255, 255, 255, .8);
+    padding: 0;
+}
+
+/* ------------------------- login in form css -------------------------- */
+.modal-content {
+    min-height: 27rem;
+}
+
+.modal-body {
+    padding: 2.5rem 1.5rem 5.5rem 1.5rem;
 }
