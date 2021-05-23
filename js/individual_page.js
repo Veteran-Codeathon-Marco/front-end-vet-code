@@ -27,7 +27,7 @@ function loadIndividualBusiness(){
                     html += "<div class='d-flex row mt-1 w-100 m-0 p-0'>";
 
                     html += "<div class='d-flex flex-column col-4 m-0 px-5'>";
-                    html += "<h4>Selling</h4>";
+                    html += "<h4>Products and Services</h4>";
                     html += "<ul class='d-flex flex-column align-items-start'>";
                     let categories = business.business_categories;
                     let categoriesArrr = categories.split(",");
@@ -37,7 +37,15 @@ function loadIndividualBusiness(){
                     html += "</ul>";
                     html += "</div>";
                     html += "<div class='d-flex flex-column col-8 m-0 px-5'>";
-                    html += "<h4>Posts:</h4>";
+                    html += "<h4>Selling:</h4>";
+                    html += "<h6>Description: CNC replacement parts</h6>";
+                    html += "<h6>Price: $35.99</h6>";
+                    html += "<h6>Quantity Available: 5</h6>";
+                    html += "<br>";
+                    html += "<h4>Selling:</h4>";
+                    html += "<h6>Description: Welding Rods</h6>";
+                    html += "<h6>Price: $5.75</h6>";
+                    html += "<h6>Quantity Available: 124</h6>";
                     html += "</div>";
                     html += "</div>";
                     $(".insert_individual").append(html);
