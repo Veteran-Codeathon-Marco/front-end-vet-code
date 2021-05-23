@@ -57,6 +57,14 @@ body {
     background-color: rgba(255, 255, 255, .8);
 }
 
+.hidden {
+    visibility: hidden;
+}
+
+.visible {
+    visibility: visible;
+}
+
 .btn-primary {
     background-color: rgb(36,49,122);
     border-color: rgb(36,49,122);
