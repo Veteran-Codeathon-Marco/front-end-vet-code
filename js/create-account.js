@@ -21,9 +21,21 @@ $(document).ready(() => {
         let firstName = $('#firstName').val(),
             lastName = $('#lastName').val(),
             emailAddress = $('#email').val(),
-            password = $('#password').val();
+            password = $('#password').val(),
+            accountType = $('#account-type option:selected').text();
 
-        $.ajax("https://vet-codeathon.herokuapp.com/users/new", {
+        console.log(accountType);
+
+        let url;
+        // check what type of account the user is trying to make
+        if (accountType === 'Business employee account') {
+            url = "https://vet-codeathon.herokuapp.com/employees/new";
+        } else {
+            url = "https://vet-codeathon.herokuapp.com/users/new";
+        }
+
+        // do an ajax post request to create account in database
+        $.ajax(url, {
             type: "POST",
             data: {
                 "firstName": firstName,
@@ -33,12 +45,7 @@ $(document).ready(() => {
             }
         }).done(() => {
             console.log("Everything went great!");
-            // clear the sign up form after submitting the form
-            $(':input','#sign-up-form')
-                .not(':button, :submit, :reset, :hidden')
-                .val('')
-                .prop('checked', false);
-            window.location = 'create-profile.html';
+            goToNextPage();
         }).fail(() => alert("Sorry, something went wrong... Please try again later."));
     });
 
@@ -46,3 +53,14 @@ $(document).ready(() => {
     // get personal info from inputs and make an ajax request to database
 
 });
+
+
+function goToNextPage() {
+    // clear the sign up form after submitting the form
+    $(':input','#sign-up-form')
+        .not(':button, :submit, :reset, :hidden')
+        .val('')
+        .prop('checked', false)
+        .prop('selected', false);
+    window.location = 'create-profile.html';
+}
