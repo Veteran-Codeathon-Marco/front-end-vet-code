@@ -14,9 +14,12 @@ let searchDatabase = () => {
                 dataArr.push(info[i]);
             }
         }
+        sessionStorage.setItem('isThereSearch', 'y');
+        let searchResults = JSON.stringify(dataArr);
+        sessionStorage.setItem('results', searchResults);
+        window.location = 'profile.html';
     });
 }
-console.log(dataArr);
 
 $('#search-button').click(function () {
     searchDatabase();

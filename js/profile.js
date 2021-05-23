@@ -1,8 +1,23 @@
 "use strict";
-fetch('https://vet-codeathon.herokuapp.com/businesses')
-    .then(response => response.json())
-    .then(businesses => loadBussInfo(businesses));
+// Determine if there anything in session storage and display accordingly
+let searchOption = sessionStorage.getItem('isThereSearch');
+alert(searchOption);
+if (searchOption == 'y'){
+    let searchbarData = JSON.parse(sessionStorage.getItem('results'));
+        sessionStorage.setItem('isThereSearch', 'n');
+    loadBussInfo(searchbarData);
+}
+else {
 
+    fetch('https://vet-codeathon.herokuapp.com/businesses')
+        .then(response => response.json())
+        .then(businesses => {
+            loadBussInfo(businesses);
+        });
+}
+
+
+//Function to Generate html of profile market place
 function loadBussInfo(businesses){
     $(".card-insert").html("");
     for (let business of businesses) {
@@ -30,150 +45,8 @@ function loadBussInfo(businesses){
     }
 }
 
-function store_id(clicked_id)
-{
+
+//Stores business ID to be able to know what business was selected.
+function store_id(clicked_id){
   sessionStorage.setItem('idBusiness', clicked_id);
 }
-// $(".more-info").click(function (){
-//     let business_id = this.id;
-//     sessionStorage.setItem('idBusiness', business_id);
-// });
-
-// let businesssPost = {};
-// businesssPost ={
-//     name:"roland business",
-//     categories:"technology",
-//     description:"a haberdashary of stuff",
-//     imageURL:"https://upload.wikimedia.org/wikipedia/commons/8/84/Paavo_Nurmi_in_his_store_in_1939.jpeg",
-// };
-//
-// console.log(businesssPost)
-
-// let userPost = {};
-// userPost = {
-//     firstName:"roland",
-//     lastName:"valdez",
-//     email:"roland@codeup.com",
-//     password:"asdf",
-//     imageURL:"www.yahoo.com",
-// };
-
-// console.log(userPost)
-//
-// let postbusiness = {
-//     method: 'POST',
-//     headers: {
-//         "Content-Type": "application/json"
-//     },
-//     body: JSON.stringify(businesssPost)
-// };
-
-// let postUser = {
-//     method: 'POST',
-//     headers: {
-//         "Content-Type": "application/json"
-//     },
-//     body: userPost
-// };
-//
-// fetch('https://vet-codeathon.herokuapp.com/users')
-//     .then(response => response.json())
-//     .then(user => console.log(user));
-
-// fetch('https://vet-codeathon.herokuapp.com/users/new', userPost)
-//     .then(response => fetch('https://vet-codeathon.herokuapp.com/users')
-//         .then(response => response.json())
-//         .then(user => console.log(user)));
-//
-// $.ajax("https://vet-codeathon.herokuapp.com/employees/new", {
-//     type: "POST",
-//     data: {
-//         "firstName": "roland",
-//         "lastName": "valdez",
-//         "email": "roland@gmail.com",
-//         "password": "asdf"
-//     }
-// });
-// $.ajax("https://vet-codeathon.herokuapp.com/employees/new", {
-//     type: "POST",
-//     data: {
-//         "firstName": "andrew",
-//         "lastName": "walsh",
-//         "email": "andrew@gmail.com",
-//         "password": "asdf"
-//     }
-// });
-// $.ajax("https://vet-codeathon.herokuapp.com/businesses/new", {
-//     type: "POST",
-//     data: {
-//         name:'San Antonio Metal Works',
-//         categories: 'Tools, Machinery, Custom Made Parts',
-//         description: 'We have grown to become the preferred supplier of custom parts for businesses, engineers and inventors around the world. We now offer manufacturing services including CNC Milling, Turning, Waterjet Cutting, Injection Molding and 3D Printing, and more than 50 materials.',
-//         imageURL:'img/machinery.jpg',
-// address:'9478 Airplane Drive, San Antonio, Texas',
-// phoneNumber:'512-334-4757'
-//     }
-// });
-// $.ajax("https://vet-codeathon.herokuapp.com/businesses/new", {
-//     type: "POST",
-//     data: {
-//         "name": "codeup",
-//         "categories": "programming, school, bootcamp",
-//     }
-// });
-// $.ajax("https://vet-codeathon.herokuapp.com/businesses/new", {
-//     type: "POST",
-//     data: {
-//         "name": "bubba gump",
-//         "categories": "restaurant, seafood",
-//     }
-// });
-// $.ajax("https://vet-codeathon.herokuapp.com/businesses/new", {
-//     type: "POST",
-//     data: {
-//         "name": "codeup",
-//         "categories": "programming",
-//     }
-// });
-// $.ajax("https://vet-codeathon.herokuapp.com/users/posts", {
-//     type: "POST",
-//     data: {
-//         type: "Buy",
-//         employeeID:,
-//         name:"roland"
-//     }
-// });
-// fetch('https://vet-codeathon.herokuapp.com/users')
-//     .then(response => response.json())
-//     .then(user => console.log(user));
-
-
-
-
-// fetch('https://vet-codeathon.herokuapp.com/businesss')
-//     .then(response => response.json())
-//     .then(business => console.log(business));
-
-// fetch('https://vet-codeathon.herokuapp.com/businesss/new', postbusiness)
-//     .then(response => console.log("posted new business"));
-
-// fetch('https://vet-codeathon.herokuapp.com/businesss')
-//     .then(response => response.json())
-//     .then(business => console.log(business));
-//
-// fetch('https://vet-codeathon.herokuapp.com/posts')
-//     .then(response => response.json())
-//     .then(posts => console.log(posts));
-
-
-// fetch(getURL, get)
-//     .then(response => {
-//         response.json()
-//             .then(test => {
-//                 console.log(test);
-//             })
-//     })
-
-// fetch('https://vet-codeathon.herokuapp.com/posts')
-//     .then(response => response.json())
-//     .then(businesses => console.log(businesses));

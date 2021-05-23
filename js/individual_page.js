@@ -1,4 +1,6 @@
 "use strict";
+
+// Generates individual businesses profile page
 function loadIndividualBusiness(){
     fetch('https://vet-codeathon.herokuapp.com/businesses')
         .then(response => response.json())
@@ -8,7 +10,6 @@ function loadIndividualBusiness(){
             for (let business of businesses) {
                 if (business.business_id == idBusiness) {
                     $(".insert_individual").html("");
-                    // selectedBusiness = business.business_id;
                     let html = "";
                     html += "<div class='mb-5'>";
                     html += "<div class='container-fluid d-flex justify-content-center'>";
@@ -24,14 +25,7 @@ function loadIndividualBusiness(){
                     // html += "<h5 class='text-center'><a href='https://www.bubbagump.com/'>www.bubbagump.com</a></h5>";
                     html += "</div>";
                     html += "<div class='d-flex row mt-1 w-100 m-0 p-0'>";
-                    // html += "<div class='d-flex flex-column col-6 m-0 px-5'>";
-                    // html += "<h4>Payment Methods</h4>";
-                    // html += "<ul>";
-                    // html += "<li>cash</li>";
-                    // html += "<li>credit card</li>";
-                    // html += "<li>paypal</li>";
-                    // html += "</ul>";
-                    // html += "</div>";
+
                     html += "<div class='d-flex flex-column col-4 m-0 px-5'>";
                     html += "<h4>Selling</h4>";
                     html += "<ul class='d-flex flex-column align-items-start'>";
@@ -41,20 +35,9 @@ function loadIndividualBusiness(){
                         html += "<li>" + individual + "</li>";
                     }
                     html += "</ul>";
-                    // html += "<ul>";
-                    // html += "<li>pineapple shrimp</li>";
-                    // html += "<li>lemon shrimp</li>";
-                    // html += "<li>coconut shrimp</li>";
-                    // html += "<li>pepper shrimp</li>";
-                    // html += "</ul>";
                     html += "</div>";
                     html += "<div class='d-flex flex-column col-8 m-0 px-5'>";
                     html += "<h4>Posts:</h4>";
-                    // html += "<ul>";
-                    // html += "<li>cash</li>";
-                    // html += "<li>credit card</li>";
-                    // html += "<li>paypal</li>";
-                    // html += "</ul>";
                     html += "</div>";
                     html += "</div>";
                     $(".insert_individual").append(html);
