@@ -29,6 +29,12 @@ $('.close').click(function () {
     $('.alert-box').hide();
 })
 
+/* --------------- Sell Post --------------- */
+
+// $('#sell-post').click(function () {
+//     $('.modal').show();
+// })
+
 
 
 // login modal function
