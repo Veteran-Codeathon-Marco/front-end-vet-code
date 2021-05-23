@@ -32,7 +32,8 @@ $('.close').click(function () {
 $('#btn-share').click((e) => {
     e.preventDefault();
 
-    let type = "sell",
+    let name = $('#name').val(),
+        type = "sell",
         price = $('#price').val(),
         amount = $('#amount').val(),
         description = $('#textarea').val(),
@@ -44,6 +45,7 @@ $('#btn-share').click((e) => {
         type: "POST",
         data: {
             "type": type,
+            "name": name,
             "price": price,
             "amount": amount,
             "description": description,
@@ -53,8 +55,9 @@ $('#btn-share').click((e) => {
         }
     }).done((data) => {
         console.log(data);
+        window.location = 'profile.html';
     }).fail(() => alert("Sorry, something went wrong... Please try again later."));
-    window.location = 'profile.html';
+
 });
 // get sell-post information
 
