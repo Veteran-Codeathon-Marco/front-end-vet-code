@@ -13,11 +13,14 @@ $(document).ready(() => {
         } else {
             businessAddress = $('#address-1').val() + ", " + $('#address-2').val() + ", " + $('#city').val() + ", " + $('#state').val();
         }
+
+        // get business info
         let businessName = $('#businessName').val(),
             phoneNumber = $('#phoneNumber').val(),
             category = $('#category option:selected').text(),
             productsServices = $('#productsServices').val();
 
+        // do an ajax post request to create a business account in the database
         $.ajax("https://vet-codeathon.herokuapp.com/businesses/new", {
             type: "POST",
             data: {
@@ -41,6 +44,20 @@ $(document).ready(() => {
 
     // personal profile set up
     // get personal info from inputs and make an ajax request to database
+    $('#btn-complete').click((e) => {
+        e.preventDefault();
+
+        // get user's address
+        let userAddress;
+        if ($('#user-address-2').val() === undefined) {
+            userAddress = $('#user-address-1').val() + ", " + $('#user-city').val() + ", " + $('#user-state').val();
+        } else {
+            userAddress = $('#user-address-1').val() + ", " + $('#user-address-2').val() + ", " + $('#user-city').val() + ", " + $('#user-state').val();
+        }
+
+        // do an ajax post request to add address to personal account in the database
+        $.ajax("https://vet-codeathon.herokuapp.com/users/new",
+    })
 
 });
 
