@@ -18,7 +18,6 @@
   <div class="container-fluid">
     <a id="title" class="navbar-brand text-light">VetConnect</a>
     <form class="d-flex">
-      <a class="nav-link mt-1" href="#" style="color: white">Buy</a>
       <a class="nav-link mt-1" href="#" style="color: white">Sell</a>
       <a class="nav-link mt-1" href="profile.html" style="color: white">Market</a>
       <a href="profile_individual_view.html">
@@ -29,19 +28,28 @@
 </nav>
 
 <div id="bg-img">
+  <div class="alert-box">
+    <div class="alert alert-success" role="alert">
+      <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+      </button>
+      <h4 class="alert-heading">Welcome!</h4>
+      <p>Please take note of the new links in the top right corner. <br>
+        You now have access to view or sell on the market place. <br>
+        Thank you again for joining the VetConnect team!</p>
+      <hr>
+    </div>
+  </div>
+
+
   <div id="searchBar" class="input-group">
     <input id="searchInput" type="text" class="form-control" placeholder="Search">
     <a>
-      <button class="btn btn-danger" type="button" id="button-addon2">Search</button>
+      <button class="btn btn-danger" type="button" id="search-button">Search</button>
     </a>
 
   </div>
 </div>
-
-<!--<main id="main">-->
-<!--  <div id="wrapper" class="row"></div>-->
-<!--  <div></div>-->
-<!--</main>-->
 
 <!--sign in form-->
 <form class="modal fade" id="signInModal" tabindex="-1" aria-labelledby="signInModal"  aria-hidden="true">
@@ -89,7 +97,6 @@
 
 <!-- Custom JS -->
 <script src="js/main-page.js"></script>
-<script src="js/jquery-main-page.js"></script>
 
 </body>
 </html>
