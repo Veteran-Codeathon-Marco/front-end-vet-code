@@ -30,8 +30,31 @@ $(document).ready(() => {
                 "phoneNumber": phoneNumber,
                 "address": businessAddress
             }
-        }).done(() => {
+        }).done((data) => {
             console.log("Everything went great!");
+
+            let businessId = data.id;
+            console.log(businessId);
+
+            let employeeInfo = JSON.parse(sessionStorage.getItem('employeeInfo'));
+            employeeInfo.businessID = businessId;
+
+            // business account go to employees page
+            $.ajax("https://vet-codeathon.herokuapp.com/employees/new", {
+                type: "POST",
+                data: employeeInfo
+            }).done((data) => {
+                console.log("Everything went great!");
+
+                // store id
+                // sessionStorage.getItem(data); // has to be a string
+                data = JSON.stringify(data);
+                sessionStorage.setItem('id', data);
+
+                goToNextPage('create-business-profile.html');
+            }).fail(() => alert("Sorry, something went wrong... Please try again later."));
+
+
             // clear the sign up form after submitting the form
             $(':input','#create-profile-form')
                 .not(':button, :submit, :reset, :hidden')

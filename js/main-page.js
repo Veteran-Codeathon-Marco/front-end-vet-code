@@ -132,4 +132,4 @@ $('.btn-login').click((e) => {
 
         })
         .catch(() => alert("Sorry, something went wrong... Please try again later."));
-    }
+    });
