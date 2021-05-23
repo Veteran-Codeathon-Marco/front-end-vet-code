@@ -6,11 +6,26 @@ body {
     height: 100vh;
 }
 
+/* ------------------------- nav bar css -------------------------- */
+#nav-logo {
+    height: 75px;
+}
+
+/* ------------------------- footer css -------------------------- */
+.footer-logo{
+    width: 100px;
+}
+
+footer {
+    color: white;
+}
+
 /* ------------------------- main page css -------------------------- */
 #bg-img {
     background-image: url("../img/pexels-snapwire-6895.jpg");
     background-size: cover;
     background-position: top;
+    background-attachment: fixed;
     height: 100vh;
     width: 100vw;
 }
@@ -18,7 +33,6 @@ body {
 .container-fluid {
     padding: 0;
 }
-
 
 #searchBar {
     position: relative;
@@ -80,9 +94,41 @@ body {
 }
 
 
-
-
 /* ------------------------- create profile form css -------------------------- */
 textarea {
     min-width: 20rem;
+}
+
+
+/* ------------------------- market business cards page css -------------------------- */
+.card {
+    opacity: 80%;
+}
+
+.user-pic {
+    border-radius: 100%;
+    max-width: 50px;
+}
+
+a {
+    color: white;
+    text-decoration: none;
+}
+
+.card-img-top {
+    width: 200px;
+    height: 200px;
+}
+
+.center {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+}
+
+
+/* ------------------------- individual business css -------------------------- */
+#companyPicture{
+    height: 300px;
 }
