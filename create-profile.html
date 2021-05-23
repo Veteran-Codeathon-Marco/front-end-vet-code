@@ -42,15 +42,24 @@
                 <label class="font-weight-bold" for="phoneNumber">Phone number</label>
                 <input type="text" class="form-control" id="phoneNumber">
                 <label for="business-address" class="font-weight-bold">Business address</label>
-                <div class="input-group" id="business-address">
-                    <label for="address-1">Address 1</label>
-                    <input type="text" class="form-control" id="address-1">
-                    <label for="address-2">Address 2</label>
-                    <input type="text" class="form-control" id="address-2">
-                    <label for="city">City</label>
-                    <input type="text" class="form-control" id="city">
-                    <label for="state">State</label>
-                    <input type="text" class="form-control" id="state">
+                <div id="business-address">
+                    <div>
+                        <label for="address-1">Address 1</label>
+                        <input type="text" class="form-control" id="address-1">
+                    </div>
+                    <div>
+                        <label for="address-2">Address 2</label>
+                        <input type="text" class="form-control" id="address-2">
+                    </div>
+                    <div>
+                        <label for="city">City</label>
+                        <input type="text" class="form-control" id="city">
+                    </div>
+                    <div>
+                        <label for="state">State</label>
+                        <input type="text" class="form-control" id="state">
+                    </div>
+
                 </div>
                 <label for="category" class="font-weight-bold">Category</label>
                 <div  class="input-group">
@@ -79,7 +88,7 @@
             <hr>
             <div class="d-flex justify-content-end">
                 <a href="create-account-login.html" class="btn btn-primary">Back</a>
-                <button class="btn btn-primary btn-finish" type="submit">Finish</button>
+                <button class="btn btn-primary btn-finish ml-3" type="submit">Finish</button>
             </div>
         </form>
     </div>
@@ -96,19 +105,27 @@
                 </div>
                 <div class="modal-body d-flex flex-column justify-content-between">
                     <div class="user_profile_form_group">
-                        <label class="font-weight-bold" for="user-address">Address</label>
-                        <div class="input-group" id="user-address">
-                            <label for="user-address-1">Address 1</label>
-                            <input type="text" class="form-control" id="user-address-1">
-                            <label for="user-address-2">Address 2</label>
-                            <input type="text" class="form-control" id="user-address-2">
-                            <label for="user-city">City</label>
-                            <input type="text" class="form-control" id="user-city">
-                            <label for="user-state">State</label>
-                            <input type="text" class="form-control" id="user-state">
+                        <label class="font-weight-bold" for="user-address">Personal Address</label>
+                        <div id="user-address">
+                            <div>
+                                <label for="user-address-1">Address 1</label>
+                                <input type="text" class="form-control" id="user-address-1">
+                            </div>
+                            <div>
+                                <label for="user-address-2">Address 2</label>
+                                <input type="text" class="form-control" id="user-address-2">
+                            </div>
+                            <div>
+                                <label for="user-city">City</label>
+                                <input type="text" class="form-control" id="user-city">
+                            </div>
+                            <div>
+                                <label for="user-state">State</label>
+                                <input type="text" class="form-control" id="user-state">
+                            </div>
                         </div>
                     </div>
-                    <a href="main-page-two.html" type="submit" class="btn btn-finish border rounded font-weight-bold">Finish</a>
+                    <a href="main-page-two.html" type="submit" class="btn btn-dark btn-finish border rounded font-weight-bold mt-3">Finish</a>
                 </div>
             </div>
         </div>
