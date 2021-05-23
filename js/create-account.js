@@ -5,22 +5,28 @@ $(document).ready(() => {
     // get business information from inputs and make an ajax request to send data to database
 
     // check if the passwords are the same
-    $('#password-repeat').click(() => {
-        $('.fa-check').toggleClass('hidden', 'visible');
-        // if ($('#password').val() === $('#password-repeat').val()) {
-        //
-        // }
+    $('#password-repeat').on ('input', function (e) {
+        e.preventDefault();
+        let i = 0;
+        console.log(i);
+        if ($('#password').val() === $('#password-repeat').val()) {
+            console.log(i++);
+            $('.fa-check').toggleClass('hidden', 'visible');
+        }
     });
 
-    $('.btn-next').click((e) => {
+    $('#btn-next').click((e) => {
         e.preventDefault();
-
-
 
         let firstName = $('#firstName').val(),
             lastName = $('#lastName').val(),
             emailAddress = $('#email').val(),
             password = $('#password').val();
+
+        console.log(firstName);
+        console.log(lastName);
+        console.log(emailAddress);
+        console.log(password);
 
         $.ajax("https://vet-codeathon.herokuapp.com/users/new", {
             type: "POST",
