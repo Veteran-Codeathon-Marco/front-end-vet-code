@@ -39,30 +39,41 @@ $(document).ready(() => {
             }).done((data) => {
                 console.log("Everything went great!");
 
-                // store user-id in local store for later
-                sessionStorage.getItem(data);
+
                 goToNextPage('create-personal-profile.html');
             }).fail(() => alert("Sorry, something went wrong... Please try again later."));
         } else {
-            // business account go to employees page
-            $.ajax("https://vet-codeathon.herokuapp.com/employees/new", {
-                type: "POST",
-                data: {
-                    "firstName": firstName,
-                    "lastName": lastName,
-                    "email": emailAddress,
-                    "password": password
-                }
-            }).done((data) => {
-                console.log("Everything went great!");
+            let employeeInfo = {
+                firstName: firstName,
+                lastName: lastName,
+                email: emailAddress,
+                password: password
+            }
 
-                // store id
-                // sessionStorage.getItem(data); // has to be a string
-                data = JSON.stringify(data);
-                sessionStorage.setItem('id', data);
+            // store employeeInfo for later
+            employeeInfo = JSON.stringify(employeeInfo);
+            sessionStorage.setItem('employeeInfo', employeeInfo);
 
-                goToNextPage('create-business-profile.html');
-            }).fail(() => alert("Sorry, something went wrong... Please try again later."));
+            window.location = 'create-business-profile.html';
+            // // business account go to employees page
+            // $.ajax("https://vet-codeathon.herokuapp.com/employees/new", {
+            //     type: "POST",
+            //     data: {
+            //         "firstName": firstName,
+            //         "lastName": lastName,
+            //         "email": emailAddress,
+            //         "password": password
+            //     }
+            // }).done((data) => {
+            //     console.log("Everything went great!");
+            //
+            //     // store id
+            //     // sessionStorage.getItem(data); // has to be a string
+            //     data = JSON.stringify(data);
+            //     sessionStorage.setItem('id', data);
+            //
+            //     goToNextPage('create-business-profile.html');
+            // }).fail(() => alert("Sorry, something went wrong... Please try again later."));
         }
     });
 });
