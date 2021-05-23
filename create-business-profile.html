@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Required meta tags -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+    <!-- custom CSS -->
+    <link rel="stylesheet" href="css/custom.css">
+    <title>Create Profile</title>
+</head>
+<body>
+<nav class="navbar bg-dark">
+    <div class="container-fluid">
+        <img id="nav-logo" src="img/vetconnect_logo.png" alt="logo" class="d-inline-block">
+    </div>
+</nav>
+
+<main class="d-flex justify-content-center align-items-center" id="bg-img">
+    <div class="fieldset border rounded p-4">
+        <header class="fieldset-header d-flex justify-content-between">
+            <div class="fieldset-title">
+                <h3 class="t-heading -size-s">Create Profile</h3>
+            </div>
+            <div class="fieldset-action ml-auto">
+                <span class="t-body">Already have an account?</span>
+                <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#signInModal">Sign in</button>
+            </div>
+        </header>
+
+        <hr>
+
+        <!-- create business account profile-->
+        <form id="business-profile-form">
+            <p>Please enter your information below.</p>
+            <div class="form-group">
+                <label class="font-weight-bold" for="businessName">Business name</label>
+                <input type="text" class="form-control" id="businessName">
+                <label class="font-weight-bold" for="phoneNumber">Phone number</label>
+                <input type="text" class="form-control" id="phoneNumber">
+                <label for="business-address" class="font-weight-bold">Business address</label>
+                <div id="business-address">
+                    <div>
+                        <label for="address-1">Address 1</label>
+                        <input type="text" class="form-control" id="address-1">
+                    </div>
+                    <div>
+                        <label for="address-2">Address 2</label>
+                        <input type="text" class="form-control" id="address-2">
+                    </div>
+                    <div>
+                        <label for="city">City</label>
+                        <input type="text" class="form-control" id="city">
+                    </div>
+                    <div>
+                        <label for="state">State</label>
+                        <input type="text" class="form-control" id="state">
+                    </div>
+
+                </div>
+                <label for="category" class="font-weight-bold">Category</label>
+                <div  class="input-group">
+                    <select id="category" class="custom-select form-control">
+                        <option>Please select a category</option>
+                        <option value="retailer">Retailer</option>
+                        <option value="health practitioner">Health Practitioner</option>
+                        <option value="food service">Food Service</option>
+                        <option value="supplier/raw ingredient distributor">Supplier/Raw Ingredient Distributor</option>
+                        <option value="manufacturer">Manufacturer</option>
+                        <option value="business services">Business Services</option>
+                        <option value="hotel">Hotel</option>
+                        <option value="investor">Investor</option>
+                        <option value="other">Other</option>
+                    </select>
+                </div>
+                <label class="font-weight-bold">Products/Services</label>
+                <div class="input-group">
+                    <textarea class="form-control" id="productsServices" aria-label="products services textarea" placeholder="Please tell us about your products or services."></textarea>
+                </div>
+            </div>
+
+            <hr>
+
+            <div class="d-flex justify-content-end">
+                <a href="create-account-login.html" class="btn btn-primary">Back</a>
+                <button class="btn btn-primary ml-3" id="btn-business" type="submit">Finish</button>
+            </div>
+        </form>
+    </div>
+</main>
+
+<!--sign in form-->
+<form class="modal fade" id="signInModal" tabindex="-1" aria-labelledby="signInModal"  aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header bg-dark">
+                <h5 class="modal-title text-white">VetConnect</h5>
+                <button type="button" class="close text-white" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true" id="close">×</span>
+                </button>
+            </div>
+            <div class="modal-body d-flex flex-column justify-content-between">
+                <div class="sign_in_form_group">
+                    <div class="sign_in_form_label">
+                        <label class="font-weight-bold" for="username">Email</label>
+                    </div>
+                    <div class="sign_in_form_input">
+                        <input type="email" class="form-control" id="username" aria-describedby="usernameHelp" placeholder="example@vetsupport.com">
+                    </div>
+                </div>
+                <div class="sign_in_form_group">
+                    <div class="d-flex justify-content-between">
+                        <div class="sign_in_form_label">
+                            <label class="font-weight-bold" for="sign_in_form_password">Password</label>
+                        </div>
+                        <div class="sign_in_form_hint">
+                            <a href="reset.html">Reset</a>
+                        </div>
+                    </div>
+                    <div class="sign_in_form_input">
+                        <input type="password" class="form-control" id="sign_in_form_password">
+                    </div>
+                </div>
+                <button type="submit" class="btn btn-login border rounded font-weight-bold">Sign in to your account</button>
+            </div>
+        </div>
+    </div>
+</form>
+
+<!--<footer class="d-flex mt-4">-->
+<!--    <div class="container">-->
+<!--        <section class="top-footer">-->
+<!--            <div class="logo-div">-->
+<!--                <h1><img src="img/vetconnect_logo.png" alt="logo" class="nav-logo d-inline-block"></h1>-->
+
+<!--            </div>-->
+
+<!--            <ul class="ul-4">-->
+<!--                <li><a href="#">About Us</a></li>-->
+<!--                <li><a href="#">Contact Us</a></li>-->
+<!--                <li><a href="#">Veteran Resources</a></li>-->
+<!--            </ul>-->
+<!--        </section>-->
+<!--        <div class="line"></div>-->
+<!--        <section class="bottom-footer">-->
+<!--            <div class="social-media-links">-->
+<!--                <a href="#">-->
+<!--                    <span class="icon-wrapper">-->
+<!--                        <i class="fab fa-facebook-f"></i>-->
+<!--                    </span>-->
+<!--                </a>-->
+<!--                <a href="#">-->
+<!--                    <span class="icon-wrapper">-->
+<!--                        <i class="fab fa-twitter"></i>-->
+<!--                    </span>-->
+<!--                </a>-->
+<!--                <a href="#">-->
+<!--                    <span class="icon-wrapper">-->
+<!--                        <i class="fas fa-rss"></i>-->
+<!--                    </span>-->
+<!--                </a>-->
+<!--                <a href="#">-->
+<!--                    <span class="icon-wrapper">-->
+<!--                        <i class="fab fa-google-plus-g"></i>-->
+<!--                    </span>-->
+<!--                </a>-->
+<!--                <a href="#">-->
+<!--                    <span class="icon-wrapper">-->
+<!--                        <i class="fab fa-linkedin-in"></i>-->
+<!--                    </span>-->
+<!--                </a>-->
+<!--            </div>-->
+<!--            <h6>@Copyright. All rights reserved.</h6>-->
+<!--        </section>-->
+<!--    </div>-->
+<!--</footer>-->
+
+
+<!-- jQuery and Bootstrap Bundle (includes Popper) -->
+<script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
+
+<!-- Custom JS -->
+<script src="js/main-page.js"></script>
+<script src="js/create-profile.js"></script>
+</body>
+</html>
