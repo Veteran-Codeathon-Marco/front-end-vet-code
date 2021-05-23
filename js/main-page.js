@@ -18,7 +18,6 @@ let searchDatabase = () => {
 }
 console.log(dataArr);
 
-
 $('#search-button').click(function () {
     searchDatabase();
 })
@@ -30,10 +29,34 @@ $('.close').click(function () {
 })
 
 /* --------------- Sell Post --------------- */
+$('#btn-share').click((e) => {
+    e.preventDefault();
 
-// $('#sell-post').click(function () {
-//     $('.modal').show();
-// })
+    let type = "sell",
+        price = $('#price').val(),
+        amount = $('#amount').val(),
+        description = $('#textarea').val(),
+        image = $('#inputGroupFile01').val(),
+        location = $('#location').val(),
+        employeeID = $('#employeeID').val();
+
+    $.ajax("https://vet-codeathon.herokuapp.com/posts/new", {
+        type: "POST",
+        data: {
+            "type": type,
+            "price": price,
+            "amount": amount,
+            "description": description,
+            "imageURL": image,
+            "location": location,
+            "employeeID": employeeID
+        }
+    }).done((data) => {
+        console.log(data);
+    }).fail(() => alert("Sorry, something went wrong... Please try again later."));
+    window.location = 'profile.html';
+});
+// get sell-post information
 
 
 
