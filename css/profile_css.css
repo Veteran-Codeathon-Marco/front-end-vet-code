@@ -1,26 +1,19 @@
-body {
-    /*background-color: #EAE7DC;*/
-}
-#background {
+
+#bg-img {
     background-image: url("../img/pexels-snapwire-6895.jpg");
     background-size: cover;
-
-}
-
-
-.navbar {
-    /*background-color: #D8C3A5;*/
-    opacity: 65%;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: top;
+    width: 100vw;
 }
 .card {
     opacity: 80%;
-    /*color: #8E8D8A;*/
 }
-.btn {
-    /*background-color: #E85A4F;*/
-}
-.card {
-    /*background-color: #D8C3A5;*/
+
+.user-pic {
+    border-radius: 100%;
+    max-width: 50px;
 }
 
 a {

@@ -1,57 +1,51 @@
 "use strict";
-fetch('https://vet-codeathon.herokuapp.com/teams')
+fetch('https://vet-codeathon.herokuapp.com/businesses')
     .then(response => response.json())
-    .then(teams => loadBussInfo(teams));
+    .then(businesses => loadBussInfo(businesses));
 
-function loadBussInfo(teams){
-    console.log(teams);
+function loadBussInfo(businesses){
+    console.log(businesses);
+
     $(".card-insert").html("");
-    // let html = "";
-    // html += "<div class='d-flex row w-100 justify-content-around mb-3'>";
-    // $(".card-insert").append(html);
-    for (let team of teams) {
+
+    for (let business of businesses) {
+        let categories = business.business_categories;
+        let categoriesArrr = categories.split(",");
         let html = "";
-        html += "<div class='d-flex col-3 flex-wrap card text-center mx-1' style='width: 18rem;'>";
-        html += "<img src='" + team.team_image_url +"' class='card-img-top mx-auto' alt='...'>";
+        html += "<div class='d-flex flex-wrap justify-content-center card text-center mx-1 my-3' style='width: 18rem;'>";
+        html += "<img src='" + business.business_image_url +"' class='card-img-top mx-auto' alt='...'>";
         html += "<div class='card-body'>";
-        html += "<h5 class='card-title'>" + team.team_name + "</h5>";
-        html += "<p class='card-text'>" + team.team_description + "</p>";
+        html += "<h5 class='card-title'>" + business.business_name + "</h5>";
+        html += "<p class='card-text'>" + business.business_description + "</p>";
         html += "<div>";
         html += "<h6 class='d-flex flex-column align-items-start'>Phone: 555-555-5555</h6>";
         html += "<h6 class='d-flex flex-column align-items-start'>Services:</h6>";
         html += "<ul class='d-flex flex-column align-items-start'>";
-        html += "<li>roof repair</li>";
-        html += "<li>sprinkler repair</li>";
-        html += "<li>bathroom remodel</li>";
+
+        for( let individual of categoriesArrr){
+            html += "<li>" + individual + "</li>";
+        }
+
         html += "</ul>";
         html += "</div>";
         html += "<a href='#' class='btn btn-primary'>More info</a>";
         html += "</div>";
         html += "</div>";
-
         $(".card-insert").append(html);
-
     }
-    // html = "";
-    // html += "</div>";
-    // $(".card-insert").append(html);
-    // html += "<div class='card-body'>";
-    // html += "<h5 class='card-title'>"+ team.team_name +"</h5>";
-    // html += "<p class='card-text'>We are a veteran owned business that specializes in home repairs</p>";
-    // html += "<a href='#' class='btn btn-primary'>More info</a>";
-    // html += "</div>";
+
 
 
 }
-// let teamsPost = {};
-// teamsPost ={
+// let businesssPost = {};
+// businesssPost ={
 //     name:"roland business",
 //     categories:"technology",
 //     description:"a haberdashary of stuff",
 //     imageURL:"https://upload.wikimedia.org/wikipedia/commons/8/84/Paavo_Nurmi_in_his_store_in_1939.jpeg",
 // };
 //
-// console.log(teamsPost)
+// console.log(businesssPost)
 
 // let userPost = {};
 // userPost = {
@@ -64,12 +58,12 @@ function loadBussInfo(teams){
 
 // console.log(userPost)
 //
-// let postTeam = {
+// let postbusiness = {
 //     method: 'POST',
 //     headers: {
 //         "Content-Type": "application/json"
 //     },
-//     body: JSON.stringify(teamsPost)
+//     body: JSON.stringify(businesssPost)
 // };
 
 // let postUser = {
@@ -88,17 +82,63 @@ function loadBussInfo(teams){
 //     .then(response => fetch('https://vet-codeathon.herokuapp.com/users')
 //         .then(response => response.json())
 //         .then(user => console.log(user)));
-
-    // $.ajax("https://vet-codeathon.herokuapp.com/users/new", {
-    //     type: "POST",
-    //     data: {
-    //         "firstName": "roland",
-    //         "lastName": "valdez",
-    //         "email": "roland@gmail.com",
-    //         "password": "asdf"
-    //     }
-    // });
-
+//
+// $.ajax("https://vet-codeathon.herokuapp.com/employees/new", {
+//     type: "POST",
+//     data: {
+//         "firstName": "roland",
+//         "lastName": "valdez",
+//         "email": "roland@gmail.com",
+//         "password": "asdf"
+//     }
+// });
+// $.ajax("https://vet-codeathon.herokuapp.com/employees/new", {
+//     type: "POST",
+//     data: {
+//         "firstName": "andrew",
+//         "lastName": "walsh",
+//         "email": "andrew@gmail.com",
+//         "password": "asdf"
+//     }
+// });
+// $.ajax("https://vet-codeathon.herokuapp.com/employees/new", {
+//     type: "POST",
+//     data: {
+//         "firstName": "nic",
+//         "lastName": "martinez",
+//         "email": "nic@gmail.com",
+//         "password": "asdf"
+//     }
+// });
+// $.ajax("https://vet-codeathon.herokuapp.com/businesses/new", {
+//     type: "POST",
+//     data: {
+//         "name": "codeup",
+//         "categories": "programming, school, bootcamp",
+//     }
+// });
+// $.ajax("https://vet-codeathon.herokuapp.com/businesses/new", {
+//     type: "POST",
+//     data: {
+//         "name": "bubba gump",
+//         "categories": "restaurant, seafood",
+//     }
+// });
+// $.ajax("https://vet-codeathon.herokuapp.com/businesses/new", {
+//     type: "POST",
+//     data: {
+//         "name": "codeup",
+//         "categories": "programming",
+//     }
+// });
+// $.ajax("https://vet-codeathon.herokuapp.com/users/posts", {
+//     type: "POST",
+//     data: {
+//         type: "Buy",
+//         employeeID:,
+//         name:"roland"
+//     }
+// });
 // fetch('https://vet-codeathon.herokuapp.com/users')
 //     .then(response => response.json())
 //     .then(user => console.log(user));
@@ -106,16 +146,16 @@ function loadBussInfo(teams){
 
 
 
-fetch('https://vet-codeathon.herokuapp.com/teams')
-    .then(response => response.json())
-    .then(team => console.log(team));
-
-// fetch('https://vet-codeathon.herokuapp.com/teams/new', postTeam)
-//     .then(response => console.log("posted new team"));
-
-// fetch('https://vet-codeathon.herokuapp.com/teams')
+// fetch('https://vet-codeathon.herokuapp.com/businesss')
 //     .then(response => response.json())
-//     .then(team => console.log(team));
+//     .then(business => console.log(business));
+
+// fetch('https://vet-codeathon.herokuapp.com/businesss/new', postbusiness)
+//     .then(response => console.log("posted new business"));
+
+// fetch('https://vet-codeathon.herokuapp.com/businesss')
+//     .then(response => response.json())
+//     .then(business => console.log(business));
 //
 // fetch('https://vet-codeathon.herokuapp.com/posts')
 //     .then(response => response.json())
@@ -130,3 +170,6 @@ fetch('https://vet-codeathon.herokuapp.com/teams')
 //             })
 //     })
 
+fetch('https://vet-codeathon.herokuapp.com/posts')
+    .then(response => response.json())
+    .then(businesses => console.log(businesses));

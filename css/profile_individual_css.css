@@ -3,13 +3,25 @@ body {
     color: white;
 
 }
-
-#background {
+#bg-img {
     background-image: url("../img/pexels-snapwire-6895.jpg");
     background-size: cover;
-
-
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: top;
+    width: 100vw;
+    height: 100vh;
 }
+.user-pic {
+    border-radius: 100%;
+    max-width: 50px;
+}
+/*#background {*/
+/*    background-image: url("../img/pexels-snapwire-6895.jpg");*/
+/*    background-size: cover;*/
+
+
+/*}*/
 #companyPicture{
     height: 300px;
 }
