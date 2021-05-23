@@ -34,7 +34,7 @@
 
         <hr>
 
-        <form id="sign-up-form">
+        <form id="create-profile-form">
             <p>Please enter your information below.</p>
             <div class="form-group">
                 <label class="font-weight-bold" for="businessName">Business name</label>
@@ -43,19 +43,19 @@
                 <input type="text" class="form-control" id="phoneNumber">
                 <label for="business-address" class="font-weight-bold">Business address</label>
                 <div class="input-group" id="business-address">
-                    <label for="Address-1">Address 1</label>
-                    <input type="text" class="form-control" id="Address-1">
-                    <label for="Address-2">Address 2</label>
-                    <input type="text" class="form-control" id="Address-2">
+                    <label for="address-1">Address 1</label>
+                    <input type="text" class="form-control" id="address-1">
+                    <label for="address-2">Address 2</label>
+                    <input type="text" class="form-control" id="address-2">
                     <label for="city">City</label>
                     <input type="text" class="form-control" id="city">
                     <label for="state">State</label>
                     <input type="text" class="form-control" id="state">
                 </div>
                 <label for="category" class="font-weight-bold">Category</label>
-                <div id="category" class="input-group-append">
-                    <select class="custom-select form-control rounded-left border-right-0" id="movie-search-select-md">
-                        <option selected>Please select a category</option>
+                <div  class="input-group">
+                    <select id="category" class="custom-select form-control">
+                        <option>Please select a category</option>
                         <option value="retailer">Retailer</option>
                         <option value="health practitioner">Health Practitioner</option>
                         <option value="food service">Food Service</option>
@@ -69,7 +69,7 @@
                 </div>
                 <label class="font-weight-bold">Products/Services</label>
                 <div class="input-group">
-                    <textarea class="form-control" aria-label="products services textarea" placeholder="Please tell us about your products or services."></textarea>
+                    <textarea class="form-control" id="productsServices" aria-label="products services textarea" placeholder="Please tell us about your products or services."></textarea>
                 </div>
             </div>
             <div class="form-group">
@@ -79,7 +79,7 @@
             <hr>
             <div class="d-flex justify-content-end">
                 <a href="create-account-login.html" class="btn btn-primary">Back</a>
-                <a href="main-page-two.html" class="btn btn-primary btn-finish" type="submit">Finish</a>
+                <button class="btn btn-primary btn-finish" type="submit">Finish</button>
             </div>
         </form>
     </div>
@@ -205,5 +205,6 @@
 <!-- jQuery and Bootstrap Bundle (includes Popper) -->
 <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
+<script src="js/create-profile.js"></script>
 </body>
 </html>
