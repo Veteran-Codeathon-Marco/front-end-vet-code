@@ -28,10 +28,10 @@ $(document).ready(() => {
 
         let url;
         // check what type of account the user is trying to make
-        if (accountType === 'Business employee account') {
-            url = "https://vet-codeathon.herokuapp.com/employees/new";
-        } else {
+        if (accountType === "Personal account") {
             url = "https://vet-codeathon.herokuapp.com/users/new";
+        } else {
+            url = "https://vet-codeathon.herokuapp.com/employees/new";
         }
 
         // do an ajax post request to create account in database
@@ -48,10 +48,6 @@ $(document).ready(() => {
             goToNextPage();
         }).fail(() => alert("Sorry, something went wrong... Please try again later."));
     });
-
-    // personal profile set up
-    // get personal info from inputs and make an ajax request to database
-
 });
 
 
