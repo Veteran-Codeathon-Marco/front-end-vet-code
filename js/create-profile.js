@@ -5,7 +5,7 @@ $(document).ready(() => {
 
     // business profile set up
     // get business information from inputs and make an ajax request to send data to database
-    $('.btn-finish').click((e) => {
+    $('#btn-business').click((e) => {
         e.preventDefault();
         let businessAddress;
         if ($('#address-2').val() === undefined) {
@@ -44,7 +44,7 @@ $(document).ready(() => {
 
     // personal profile set up
     // get personal info from inputs and make an ajax request to database
-    $('#btn-complete').click((e) => {
+    $('#btn-personal').click((e) => {
         e.preventDefault();
 
         // get user's address
@@ -56,7 +56,9 @@ $(document).ready(() => {
         }
 
         // do an ajax post request to add address to personal account in the database
-        $.ajax("https://vet-codeathon.herokuapp.com/users/new",
+        $.ajax("https://vet-codeathon.herokuapp.com/users/new", () => {
+
+        }).done();
     })
 
 });

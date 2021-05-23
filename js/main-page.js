@@ -36,7 +36,6 @@ $('.close').click(function () {
 // })
 
 
-
 // login modal function
 // click "Sign in to your account" button
 $('.btn-login').click((e) => {
@@ -46,48 +45,62 @@ $('.btn-login').click((e) => {
     let email = $('#username').val(),
         password = $('#sign_in_form_password').val();
 
-    // do an ajax request to get id
-    $.ajax("https://vet-codeathon.herokuapp.com/users/", {
-        type: "POST",
-        data: {
-            "email": email,
-            "password": password
-        }
-    }).done((data) => {
-        console.log(data);
-        // check if the email and password are in the users database
-        if (data !== []) {
-            // get the user id
-            // go to main-two page
-            window.location = 'main-page-two.html';
-        } else {
-            $.ajax("https://vet-codeathon.herokuapp.com/employees/", {
-                type: "POST",
-                data: {
-                    "email": email,
-                    "password": password
+    // get all users
+    fetch('https://vet-codeathon.herokuapp.com/users/')
+        .then(response => response.json())
+        .then(users => {
+            console.log(users);
+
+            let foundUser = false;
+            // go through the users array to see if the email exists in the database
+            for (let user of users) {
+                if (user.email === email) { // email exists
+                    foundUser = true;
+                    let id = user.user_id;
+                    $.ajax("https://vet-codeathon.herokuapp.com/users/auth/" + id, {
+                        type: "POST",
+                        data: {
+                            "password": password
+                        }
+                    }).done((result) => {
+                        console.log(result);
+                        window.location = 'main-page-two.html';
+                    }).fail(() => alert("Sorry, something went wrong... Please try again later."));
                 }
-            }).done((results) => {
-                console.log(results);
-                if (results === []) {
-                    alert("Sorry, you may enter the wrong email or password. You can try again or sign up.")
-                } else {
-                    // get employee_id and business_id
-                }
-            }).fail(() => alert("Sorry, something went wrong... Please try again later."));
-        }
-    }).fail(() => alert("Sorry, something went wrong... Please try again later."));
+            }
 
+            if (foundUser === false) { // email doesn't match
+                // get all the employees
+                fetch('https://vet-codeathon.herokuapp.com/employees/')
+                    .then(response => response.json())
+                    .then(employees => {
+                        console.log(employees);
 
-    fetch('https://vet-codeathon.herokuapp.com/businesses/{id}')
-    .then(response => response.json())
-    .then(business => {
-        console.log(business);
-        // go to business profile page
-        // window.location = 'business profile page';
-    });
+                        let foundEmployee = false;
+                        // go through the employees array to see if the email exists in the database
+                        for (let employee of employees) {
+                            if (employee.email === email) {
+                                foundEmployee = true;
+                                let id = employee.employee_id;
+                                $.ajax("https://vet-codeathon.herokuapp.com/employees/auth/" + id, {
+                                    type: "POST",
+                                    data: {
+                                        "password": password
+                                    }
+                                }).done((result) => {
+                                    console.log(result);
+                                    window.location = 'main-page-two.html';
+                                }).fail(() => alert("Sorry, something went wrong... Please try again later."));
+                            }
+                        }
 
-    ////////// need to take update
-    // go to main-two page
-    window.location = 'main-page-two.html';
-});
+                        if (foundEmployee === false) {
+                            alert("Sorry, you may enter the wrong email or password. You can try again or sign up.")
+                        }
+                    })
+                    .catch(() => alert("Sorry, something went wrong... Please try again later."));
+            }
+
+        })
+        .catch(() => alert("Sorry, something went wrong... Please try again later."));
+    }
