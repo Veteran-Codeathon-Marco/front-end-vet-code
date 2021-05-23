@@ -5,19 +5,19 @@ const grabData = () => {
     return fetch("https://vet-codeathon.herokuapp.com/businesses").then(response =>
         response.json());
 }
-
+let dataArr = [];
 let searchDatabase = () => {
     grabData().then(function(info){
         const searchInput = $('#searchInput').val();
-        let dataArr = [];
         for (let i = 0; i < info.length; i++) {
             if (info[i].business_name.toLowerCase().includes(searchInput.toLowerCase()) || info[i].business_categories.toLowerCase().includes(searchInput.toLowerCase())) {
                 dataArr.push(info[i]);
             }
         }
-        console.log(dataArr);
     });
 }
+console.log(dataArr);
+
 
 $('#search-button').click(function () {
     searchDatabase();
