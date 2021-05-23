@@ -23,11 +23,6 @@ $(document).ready(() => {
             emailAddress = $('#email').val(),
             password = $('#password').val();
 
-        console.log(firstName);
-        console.log(lastName);
-        console.log(emailAddress);
-        console.log(password);
-
         $.ajax("https://vet-codeathon.herokuapp.com/users/new", {
             type: "POST",
             data: {
