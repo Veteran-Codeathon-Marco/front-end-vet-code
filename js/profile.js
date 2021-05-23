@@ -10,13 +10,13 @@ function loadBussInfo(businesses){
         let categoriesArrr = categories.split(",");
         let html = "";
         html += "<div class='d-flex flex-wrap justify-content-center card text-center mx-1 my-3' style='width: 18rem;'>";
-        html += "<img src='" + business.business_image_url +"' class='card-img-top mx-auto' alt='...'>";
+        html += "<img src='" + business.business_image_url +"' class='card-img-top mx-auto mt-3' alt='...'>";
         html += "<div class='card-body'>";
         html += "<h5 class='card-title'>" + business.business_name + "</h5>";
         html += "<p class='card-text'>" + business.business_description + "</p>";
         html += "<div>";
-        html += "<h6 class='d-flex flex-column align-items-start'>Phone: 555-555-5555</h6>";
-        html += "<h6 class='d-flex flex-column align-items-start'>Services:</h6>";
+        html += "<h6 class='d-flex flex-column align-items-start'>Phone: " + business.phone_number + "</h6>";
+        html += "<h6 class='d-flex flex-column align-items-start'>Products/Services:</h6>";
         html += "<ul class='d-flex flex-column align-items-start'>";
         for( let individual of categoriesArrr){
             html += "<li>" + individual + "</li>";
@@ -103,13 +103,15 @@ function store_id(clicked_id)
 //         "password": "asdf"
 //     }
 // });
-// $.ajax("https://vet-codeathon.herokuapp.com/employees/new", {
+// $.ajax("https://vet-codeathon.herokuapp.com/businesses/new", {
 //     type: "POST",
 //     data: {
-//         "firstName": "nic",
-//         "lastName": "martinez",
-//         "email": "nic@gmail.com",
-//         "password": "asdf"
+//         name:'San Antonio Metal Works',
+//         categories: 'Tools, Machinery, Custom Made Parts',
+//         description: 'We have grown to become the preferred supplier of custom parts for businesses, engineers and inventors around the world. We now offer manufacturing services including CNC Milling, Turning, Waterjet Cutting, Injection Molding and 3D Printing, and more than 50 materials.',
+//         imageURL:'img/machinery.jpg',
+// address:'9478 Airplane Drive, San Antonio, Texas',
+// phoneNumber:'512-334-4757'
 //     }
 // });
 // $.ajax("https://vet-codeathon.herokuapp.com/businesses/new", {
