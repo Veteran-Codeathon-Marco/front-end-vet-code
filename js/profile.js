@@ -34,10 +34,10 @@ function store_id(clicked_id)
 {
   sessionStorage.setItem('idBusiness', clicked_id);
 }
-$(".more-info").click(function (){
-    let business_id = this.id;
-    sessionStorage.setItem('idBusiness', business_id);
-});
+// $(".more-info").click(function (){
+//     let business_id = this.id;
+//     sessionStorage.setItem('idBusiness', business_id);
+// });
 
 // let businesssPost = {};
 // businesssPost ={
