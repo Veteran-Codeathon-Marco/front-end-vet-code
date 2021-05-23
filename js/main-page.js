@@ -1,6 +1,6 @@
 "use strict";
 
-// Search database on click of search-button
+/* --------------- Search database on click of search-button --------------- */
 const grabData = () => {
     return fetch("https://vet-codeathon.herokuapp.com/businesses").then(response =>
         response.json());
@@ -21,6 +21,12 @@ let searchDatabase = () => {
 
 $('#search-button').click(function () {
     searchDatabase();
+})
+
+/* --------------- Remove alert --------------- */
+
+$('.close').click(function () {
+    $('.alert-box').hide();
 })
 
 
