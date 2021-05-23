@@ -1,7 +1,7 @@
 "use strict";
 // Determine if there anything in session storage and display accordingly
 let searchOption = sessionStorage.getItem('isThereSearch');
-alert(searchOption);
+
 if (searchOption == 'y'){
     let searchbarData = JSON.parse(sessionStorage.getItem('results'));
         sessionStorage.setItem('isThereSearch', 'n');
