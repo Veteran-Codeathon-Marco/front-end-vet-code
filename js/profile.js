@@ -4,10 +4,7 @@ fetch('https://vet-codeathon.herokuapp.com/businesses')
     .then(businesses => loadBussInfo(businesses));
 
 function loadBussInfo(businesses){
-    console.log(businesses);
-
     $(".card-insert").html("");
-
     for (let business of businesses) {
         let categories = business.business_categories;
         let categoriesArrr = categories.split(",");
@@ -21,22 +18,27 @@ function loadBussInfo(businesses){
         html += "<h6 class='d-flex flex-column align-items-start'>Phone: 555-555-5555</h6>";
         html += "<h6 class='d-flex flex-column align-items-start'>Services:</h6>";
         html += "<ul class='d-flex flex-column align-items-start'>";
-
         for( let individual of categoriesArrr){
             html += "<li>" + individual + "</li>";
         }
-
         html += "</ul>";
         html += "</div>";
-        html += "<a href='#' class='btn btn-primary'>More info</a>";
+        html += "<a id='" + business.business_id + "' onClick='store_id(this.id)' href='profile_individual_view.html' class='more-info btn btn-primary'>More info</a>";
         html += "</div>";
         html += "</div>";
         $(".card-insert").append(html);
     }
-
-
-
 }
+
+function store_id(clicked_id)
+{
+  sessionStorage.setItem('idBusiness', clicked_id);
+}
+$(".more-info").click(function (){
+    let business_id = this.id;
+    sessionStorage.setItem('idBusiness', business_id);
+});
+
 // let businesssPost = {};
 // businesssPost ={
 //     name:"roland business",
@@ -170,6 +172,6 @@ function loadBussInfo(businesses){
 //             })
 //     })
 
-fetch('https://vet-codeathon.herokuapp.com/posts')
-    .then(response => response.json())
-    .then(businesses => console.log(businesses));
+// fetch('https://vet-codeathon.herokuapp.com/posts')
+//     .then(response => response.json())
+//     .then(businesses => console.log(businesses));
